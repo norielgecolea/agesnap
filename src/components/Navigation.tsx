@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 
 interface NavigationProps {
@@ -10,9 +9,9 @@ interface NavigationProps {
 export default function Navigation({ activeTab, onTabChange }: NavigationProps) {
   const tabs = [
     { id: "exact-age", label: "Exact Age" },
-    { id: "legacy", label: "Legacy" },
-    { id: "countdown", label: "Countdown" },
-    { id: "universal", label: "Universal" },
+    { id: "age-gap", label: "Age Gap" },
+    { id: "next-birthday", label: "Next Birthday" },
+    { id: "birth-year", label: "Birth Year" },
   ];
 
   return (

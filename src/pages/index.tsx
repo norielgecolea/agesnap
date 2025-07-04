@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Navigation from "@/components/Navigation";
 import AgeCalculator from "@/components/AgeCalculator";
-import LegacyCalculator from "@/components/LegacyCalculator";
-import CountdownCalculator from "@/components/CountdownCalculator";
-import UniversalCalculator from "@/components/UniversalCalculator";
+import AgeGapCalculator from "@/components/AgeGapCalculator";
+import NextBirthdayCalculator from "@/components/NextBirthdayCalculator";
+import BirthYearCalculator from "@/components/BirthYearCalculator";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("exact-age");
@@ -14,12 +14,12 @@ export default function Home() {
     switch (activeTab) {
       case "exact-age":
         return <AgeCalculator />;
-      case "legacy":
-        return <LegacyCalculator />;
-      case "countdown":
-        return <CountdownCalculator />;
-      case "universal":
-        return <UniversalCalculator />;
+      case "age-gap":
+        return <AgeGapCalculator />;
+      case "next-birthday":
+        return <NextBirthdayCalculator />;
+      case "birth-year":
+        return <BirthYearCalculator />;
       default:
         return <AgeCalculator />;
     }
@@ -29,7 +29,7 @@ export default function Home() {
     <>
       <Head>
         <title>AgeSnap - Age Calculator</title>
-        <meta name="description" content="Calculate your exact age, countdown to events, and convert time units with AgeSnap" />
+        <meta name="description" content="Calculate your exact age, find age gaps, countdown to birthdays, and determine birth years with AgeSnap" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -40,7 +40,7 @@ export default function Home() {
               Age Calculator
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Calculate your exact age, count down to special events, and convert between different time units with precision and ease.
+              A versatile tool to explore everything about age. Calculate exact age, find the gap between two dates, countdown to your next birthday, or find a birth year.
             </p>
           </div>
 
