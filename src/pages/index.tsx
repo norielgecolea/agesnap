@@ -51,7 +51,7 @@ export default function Home() {
           </div>
 
           <footer className="mt-16 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 AgeSnap. Calculate time with precision.</p>
+            <p>&copy; 2025 NorielGecolea.</p>
           </footer>
         </div>
       </main>
