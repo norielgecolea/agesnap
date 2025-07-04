@@ -29,7 +29,7 @@ export default function NextBirthdayCalculator() {
     const newIntervalId = setInterval(() => {
       const today = new Date();
       const birth = new Date(birthDate);
-      let nextBirthday = new Date(today.getFullYear(), birth.getMonth(), birth.getDate());
+      const nextBirthday = new Date(today.getFullYear(), birth.getMonth(), birth.getDate());
 
       if (today > nextBirthday) {
         nextBirthday.setFullYear(today.getFullYear() + 1);
