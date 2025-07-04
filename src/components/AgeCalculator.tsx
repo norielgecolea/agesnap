@@ -20,7 +20,7 @@ export default function AgeCalculator() {
   const [currentDate, setCurrentDate] = useState(
     new Date().toISOString().split("T")[0]
   );
-  const [ageResult, setAgeResult] = useState<AgeResult | null>(null);
+  const [ageResult, setAgeResult] = useState&lt;AgeResult | null&gt;(null);
 
   const calculateAge = () => {
     if (!birthDate || !currentDate) return;
@@ -65,108 +65,108 @@ export default function AgeCalculator() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <Card className="shadow-lg">
-        <CardHeader className="text-center pb-6">
-          <CardTitle className="text-2xl font-bold text-gray-800">
+    &lt;div className="w-full max-w-2xl mx-auto"&gt;
+      &lt;Card className="shadow-lg dark:bg-gray-800/40"&gt;
+        &lt;CardHeader className="text-center pb-6"&gt;
+          &lt;CardTitle className="text-2xl font-bold text-gray-800 dark:text-gray-100"&gt;
             Exact Age Calculator
-          </CardTitle>
-          <p className="text-gray-600 mt-2">
+          &lt;/CardTitle&gt;
+          &lt;p className="text-gray-600 dark:text-gray-400 mt-2"&gt;
             Calculate your exact age in years, months, and days.
-          </p>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="birthDate" className="text-sm font-medium text-gray-700">
+          &lt;/p&gt;
+        &lt;/CardHeader&gt;
+        &lt;CardContent className="space-y-6"&gt;
+          &lt;div className="space-y-4"&gt;
+            &lt;div&gt;
+              &lt;Label htmlFor="birthDate" className="text-sm font-medium text-gray-700 dark:text-gray-300"&gt;
                 Your Birth Date:
-              </Label>
-              <div className="relative mt-1">
-                <Input
+              &lt;/Label&gt;
+              &lt;div className="relative mt-1"&gt;
+                &lt;Input
                   id="birthDate"
                   type="date"
                   value={birthDate}
                   onChange={(e) => setBirthDate(e.target.value)}
                   className="w-full pl-10"
-                />
-                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              </div>
-            </div>
+                /&gt;
+                &lt;Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" /&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
 
-            <div>
-              <Label htmlFor="currentDate" className="text-sm font-medium text-gray-700">
+            &lt;div&gt;
+              &lt;Label htmlFor="currentDate" className="text-sm font-medium text-gray-700 dark:text-gray-300"&gt;
                 Current Date (or select another date):
-              </Label>
-              <div className="relative mt-1">
-                <Input
+              &lt;/Label&gt;
+              &lt;div className="relative mt-1"&gt;
+                &lt;Input
                   id="currentDate"
                   type="date"
                   value={currentDate}
                   onChange={(e) => setCurrentDate(e.target.value)}
                   className="w-full pl-10"
-                />
-                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              </div>
-            </div>
+                /&gt;
+                &lt;Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" /&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
 
-            <Button
+            &lt;Button
               onClick={calculateAge}
               className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md font-medium"
               disabled={!birthDate || !currentDate}
-            >
+            &gt;
               Calculate Age
-            </Button>
-          </div>
+            &lt;/Button&gt;
+          &lt;/div&gt;
 
           {ageResult && (
-            <div className="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+            &lt;div className="mt-8 p-6 bg-blue-500/10 rounded-lg border border-blue-500/20"&gt;
+              &lt;h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4"&gt;
                 Your Age Results:
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-md shadow-sm">
-                  <div className="text-2xl font-bold text-blue-600">
+              &lt;/h3&gt;
+              &lt;div className="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;
+                &lt;div className="bg-white/80 dark:bg-gray-700/50 p-4 rounded-md shadow-sm"&gt;
+                  &lt;div className="text-2xl font-bold text-blue-600 dark:text-blue-400"&gt;
                     {ageResult.years}
-                  </div>
-                  <div className="text-sm text-gray-600">Years</div>
-                </div>
-                <div className="bg-white p-4 rounded-md shadow-sm">
-                  <div className="text-2xl font-bold text-green-600">
+                  &lt;/div&gt;
+                  &lt;div className="text-sm text-gray-600 dark:text-gray-400"&gt;Years&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div className="bg-white/80 dark:bg-gray-700/50 p-4 rounded-md shadow-sm"&gt;
+                  &lt;div className="text-2xl font-bold text-green-600 dark:text-green-400"&gt;
                     {ageResult.months}
-                  </div>
-                  <div className="text-sm text-gray-600">Months</div>
-                </div>
-                <div className="bg-white p-4 rounded-md shadow-sm">
-                  <div className="text-2xl font-bold text-purple-600">
+                  &lt;/div&gt;
+                  &lt;div className="text-sm text-gray-600 dark:text-gray-400"&gt;Months&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div className="bg-white/80 dark:bg-gray-700/50 p-4 rounded-md shadow-sm"&gt;
+                  &lt;div className="text-2xl font-bold text-purple-600 dark:text-purple-400"&gt;
                     {ageResult.days}
-                  </div>
-                  <div className="text-sm text-gray-600">Days</div>
-                </div>
-                <div className="bg-white p-4 rounded-md shadow-sm">
-                  <div className="text-2xl font-bold text-orange-600">
+                  &lt;/div&gt;
+                  &lt;div className="text-sm text-gray-600 dark:text-gray-400"&gt;Days&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div className="bg-white/80 dark:bg-gray-700/50 p-4 rounded-md shadow-sm"&gt;
+                  &lt;div className="text-2xl font-bold text-orange-600 dark:text-orange-400"&gt;
                     {ageResult.totalDays.toLocaleString()}
-                  </div>
-                  <div className="text-sm text-gray-600">Total Days</div>
-                </div>
-              </div>
-              <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-md shadow-sm">
-                  <div className="text-xl font-bold text-teal-600">
+                  &lt;/div&gt;
+                  &lt;div className="text-sm text-gray-600 dark:text-gray-400"&gt;Total Days&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4"&gt;
+                &lt;div className="bg-white/80 dark:bg-gray-700/50 p-4 rounded-md shadow-sm"&gt;
+                  &lt;div className="text-xl font-bold text-teal-600 dark:text-teal-400"&gt;
                     {ageResult.totalWeeks.toLocaleString()}
-                  </div>
-                  <div className="text-sm text-gray-600">Total Weeks</div>
-                </div>
-                <div className="bg-white p-4 rounded-md shadow-sm">
-                  <div className="text-xl font-bold text-pink-600">
+                  &lt;/div&gt;
+                  &lt;div className="text-sm text-gray-600 dark:text-gray-400"&gt;Total Weeks&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div className="bg-white/80 dark:bg-gray-700/50 p-4 rounded-md shadow-sm"&gt;
+                  &lt;div className="text-xl font-bold text-pink-600 dark:text-pink-400"&gt;
                     {ageResult.totalMonths}
-                  </div>
-                  <div className="text-sm text-gray-600">Total Months</div>
-                </div>
-              </div>
-            </div>
+                  &lt;/div&gt;
+                  &lt;div className="text-sm text-gray-600 dark:text-gray-400"&gt;Total Months&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
           )}
-        </CardContent>
-      </Card>
-    </div>
+        &lt;/CardContent&gt;
+      &lt;/Card&gt;
+    &lt;/div&gt;
   );
 }
