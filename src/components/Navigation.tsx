@@ -13,7 +13,6 @@ export default function Navigation({ activeTab, onTabChange }: NavigationProps) 
     { id: "next-birthday", label: "Next Birthday" },
     { id: "birth-year", label: "Birth Year" },
   ];
-
   return (
     <div className="flex flex-wrap justify-center gap-2 mb-8">
       {tabs.map((tab) => (
