@@ -30,7 +30,7 @@ export default function Home() {
       <Head>
         <title>AgeSnap - Age Calculator</title>
         <meta name="description" content="Calculate your exact age, find age gaps, countdown to birthdays, and determine birth years with AgeSnap" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/agesnap.ico" />
       </Head>
 
       <main className=" min-h-screen bg-gradient-to-br from-blue-300 via-white to-purple-300">
