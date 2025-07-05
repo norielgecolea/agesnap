@@ -33,11 +33,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <main className=" min-h-screen bg-gradient-to-br from-blue-300 via-white to-purple-300">
         <div className="container mx-auto px-4 py-8 max-w-6xl">
           <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Age Calculator
+              AGE SNAP
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A versatile tool to explore everything about age. Calculate exact age, find the gap between two dates, countdown to your next birthday, or find a birth year.
