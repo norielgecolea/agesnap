@@ -7,7 +7,7 @@ export default function Document() {
 
 
       </Head>
-      <body className="antialiased bg-slate-600">
+      <body className="antialiased ">
         <Main />
         <NextScript />
       </body>

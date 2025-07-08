@@ -31,6 +31,8 @@ export default function Home() {
         <title>AgeSnap - Age Calculator</title>
         <meta name="description" content="Calculate your exact age, find age gaps, countdown to birthdays, and determine birth years with AgeSnap" />
         <link rel="icon" href="/agesnap.ico" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3738297787059683"
+          crossorigin="anonymous"></script>
       </Head>
 
       <main className=" min-h-screen bg-gradient-to-br from-blue-300 via-white to-purple-300">
