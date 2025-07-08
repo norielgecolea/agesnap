@@ -31,8 +31,7 @@ export default function Home() {
         <title>AgeSnap - Age Calculator</title>
         <meta name="description" content="Calculate your exact age, find age gaps, countdown to birthdays, and determine birth years with AgeSnap" />
         <link rel="icon" href="/agesnap.ico" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3738297787059683"
-          crossorigin="anonymous"></script>
+       
       </Head>
 
       <main className=" min-h-screen bg-gradient-to-br from-blue-300 via-white to-purple-300">
@@ -52,9 +51,13 @@ export default function Home() {
             {renderActiveComponent()}
           </div>
 
-          <footer className="mt-16 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 NorielGecolea.</p>
+          <footer className="bg-slate-800 text-center text-sm text-gray-100 fixed bottom-0 w-full left-0 p-0">
+            <p>&copy; 2025 <strong>Noriel Gecolea</strong>. All rights reserved.</p>
           </footer>
+
+
+
+          
         </div>
       </main>
     </>
