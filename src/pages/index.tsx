@@ -38,7 +38,7 @@ export default function Home() {
 
       <main className="min-h-screen bg-gradient-to-br from-blue-300 via-white to-purple-300">
 
-        <div className="flex justify-center my-4 min-w-screen h-auto">
+        <div className="flex justify-center my-4 min-w-screen h-auto bg-black">
           <AdUnit />
         </div>
         <div className="container mx-auto px-4 py-8 max-w-6xl">

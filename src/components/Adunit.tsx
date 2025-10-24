@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { Color } from "three/src/Three.Core.js";
+
 
 declare global {
   interface Window {
