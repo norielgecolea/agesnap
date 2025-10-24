@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Navigation from "@/components/Navigation";
 import AgeCalculator from "@/components/AgeCalculator";
@@ -7,8 +7,30 @@ import AgeGapCalculator from "@/components/AgeGapCalculator";
 import NextBirthdayCalculator from "@/components/NextBirthdayCalculator";
 import BirthYearCalculator from "@/components/BirthYearCalculator";
 
+// ✅ Tell TypeScript about adsbygoogle
+declare global {
+  interface Window {
+    adsbygoogle: any[];
+  }
+}
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState("exact-age");
+  const adRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      try {
+        if (adRef.current && adRef.current.offsetWidth >= 250) {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        }
+      } catch (e) {
+        console.error("AdSense error:", e);
+      }
+    }, 1000); // ⏱ wait a bit for layout
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const renderActiveComponent = () => {
     switch (activeTab) {
@@ -34,6 +56,13 @@ export default function Home() {
           content="Calculate your exact age, find age gaps, countdown to birthdays, and determine birth years with AgeSnap"
         />
         <link rel="icon" href="/agesnap.ico" />
+
+        {/* ✅ AdSense Script */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3738297787059683"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
 
       <main className="min-h-screen bg-gradient-to-br from-blue-300 via-white to-purple-300">
@@ -52,6 +81,23 @@ export default function Home() {
           <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
 
           <div className="flex justify-center">{renderActiveComponent()}</div>
+
+          {/* ✅ AdSense Ad */}
+          <div className="my-10 flex justify-center w-full" ref={adRef}>
+            <ins
+              className="adsbygoogle"
+              style={{
+                display: "block",
+                width: "100%",
+                maxWidth: "600px", // ✅ ensure enough width
+                minWidth: "250px",
+              }}
+              data-ad-format="fluid"
+              data-ad-layout-key="-fb+5w+4e-db+86"
+              data-ad-client="ca-pub-3738297787059683"
+              data-ad-slot="9651419496"
+            ></ins>
+          </div>
 
           <footer className="bg-slate-800 text-center text-sm text-gray-100 fixed bottom-0 w-full left-0 p-0">
             <p>
