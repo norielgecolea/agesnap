@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { Color } from "three/src/Three.Core.js";
 
 declare global {
   interface Window {
@@ -27,7 +28,7 @@ export default function AdUnit() {
     <ins
       ref={adRef}
       className="adsbygoogle"
-      style={{ display: "block" }}
+      style={{ display: "flex" }}
       data-ad-format="fluid"
       data-ad-layout-key="-fb+5w+4e-db+86"
       data-ad-client="ca-pub-3738297787059683"
